@@ -25,16 +25,16 @@ function Nav() {
     }
   };
   return (
-    <div>
+    <div id="home">
       <div className="fixed-nav">
         <nav>
-          <p className="title">coders lounge</p>
-          <p className="menu" onClick={toggleMenu}>
+          <h1 className="title">coders lounge</h1>
+          <h3 className="menu" onClick={toggleMenu}>
             &#60;nav&#62;
-          </p>
+          </h3>
         </nav>
         <div className="navbar">
-          <ul>
+          <ul onClick={toggleMenu}>
             <li>
               <a href="#home">home</a>
             </li>
