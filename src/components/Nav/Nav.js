@@ -56,7 +56,7 @@ function Nav() {
               <a href="#posts">posts</a>
             </li>
             <li>
-              <a href="#create-post">create post</a>
+              <a href="#create-post">create</a>
             </li>
             <li>
               <a href="#login">login</a>

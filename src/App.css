@@ -70,7 +70,7 @@ a {
   position: fixed;
   top: 0;
   z-index: -4;
-  box-shadow: 0 3000px rgba(77, 38, 170, 0.5) inset;
+  box-shadow: 0 3000px rgba(77, 38, 170, 0.75) inset;
 }
 
 .header-message {
