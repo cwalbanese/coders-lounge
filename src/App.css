@@ -49,7 +49,6 @@ a {
   margin-right: 20px;
   grid-column: 2;
   cursor: pointer;
-
   display: grid;
   justify-content: right;
 }
@@ -87,8 +86,69 @@ a {
   margin: 0 auto;
 }
 
+#posts {
+  background-color: white;
+  color: #4d26aa;
+}
+
+#posts h2 {
+  margin-top: 75px;
+  margin-left: 10px;
+}
+
 .about {
   background-color: white;
+  color: #4d26aa;
+}
+
+.about h2 {
+  margin-top: 75px;
+  margin-left: 10px;
+}
+
+.about p {
+  margin-left: 10px;
+  margin-bottom: 75px;
+}
+
+.posts-message {
+  color: #f679fa;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  text-align: center;
+}
+
+#create-post {
+  background-color: white;
+  color: #4d26aa;
+}
+
+#create-post h2 {
+  margin-top: 75px;
+  margin-left: 10px;
+}
+
+#login {
+  background-color: white;
+  color: #4d26aa;
+}
+
+#login h2 {
+  margin-top: 75px;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #4d26aa;
+  color: #f679fa;
+}
+
+footer p {
+  margin-left: 20px;
 }
 
 @media (max-width: 600px) {
@@ -97,7 +157,7 @@ a {
     background-color: #4d26aa;
   }
   .header-message {
-    margin-left: 30px;
+    text-align: center;
   }
   .navbar {
     width: 100vw;
@@ -105,5 +165,23 @@ a {
   }
   .show {
     transform: none;
+  }
+
+  nav {
+    transition: 0s;
+  }
+
+  .about h2 {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .about p {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .posts-message {
+    font-size: 36px;
   }
 }

@@ -3,7 +3,10 @@ import React from 'react';
 function Nav() {
   const toggleNav = () => {
     let nav = document.querySelector('nav');
+    let navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
+      nav.classList.add('nav-background');
+    } else if (window.scrollY < 100 && navbar.classList.contains('show')) {
       nav.classList.add('nav-background');
     } else {
       nav.classList.remove('nav-background');
@@ -20,12 +23,16 @@ function Nav() {
       navbar.classList.toggle('show');
       let nav = document.querySelector('nav');
       nav.classList.add('nav-background');
-    } else {
+    } else if (menu.innerHTML === '&lt;/nav&gt;' && window.scrollY < 100) {
       let navbar = document.querySelector('.navbar');
       navbar.classList.toggle('show');
       menu.innerHTML = '&lt;nav&gt;';
       let nav = document.querySelector('nav');
       nav.classList.remove('nav-background');
+    } else {
+      let navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('show');
+      menu.innerHTML = '&lt;nav&gt;';
     }
   };
   return (
@@ -43,13 +50,16 @@ function Nav() {
               <a href="#home">home</a>
             </li>
             <li>
-              <a href="#top-posts">top posts</a>
+              <a href="#about">about</a>
+            </li>
+            <li>
+              <a href="#posts">posts</a>
             </li>
             <li>
               <a href="#create-post">create post</a>
             </li>
             <li>
-              <a href="#about">about</a>
+              <a href="#login">login</a>
             </li>
           </ul>
         </div>
