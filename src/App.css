@@ -18,6 +18,7 @@ nav {
 }
 
 .navbar {
+  margin-top: 68px;
   transform: translateX(400%);
   transition: 1s;
   height: 100vh;
@@ -25,10 +26,12 @@ nav {
   display: grid;
   justify-content: right;
   background-color: #4d26aa;
+  overflow: hidden;
 }
 
 .show {
   transform: translateX(300%);
+  position: fixed;
 }
 
 ul {

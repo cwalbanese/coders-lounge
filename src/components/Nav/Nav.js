@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Nav() {
+function Nav(props) {
   const toggleNav = () => {
     let nav = document.querySelector('nav');
     let navbar = document.querySelector('.navbar');
@@ -40,29 +40,30 @@ function Nav() {
       <div className="fixed-nav" onScroll={toggleNav}>
         <nav>
           <h1 className="title">coders lounge</h1>
+          <h3>welcome "{props.username}"</h3>
           <h3 className="menu" onClick={toggleMenu}>
             &#60;nav&#62;
           </h3>
         </nav>
-        <div className="navbar">
-          <ul onClick={toggleMenu}>
-            <li>
-              <a href="#home">home</a>
-            </li>
-            <li>
-              <a href="#about">about</a>
-            </li>
-            <li>
-              <a href="#posts">posts</a>
-            </li>
-            <li>
-              <a href="#create-post">create</a>
-            </li>
-            <li>
-              <a href="#login">login</a>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div className="navbar">
+        <ul onClick={toggleMenu}>
+          <li>
+            <a href="#home">home</a>
+          </li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#posts">posts</a>
+          </li>
+          <li>
+            <a href="#create-post">create</a>
+          </li>
+          <li>
+            <a href="#login">login</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
