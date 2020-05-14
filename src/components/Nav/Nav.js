@@ -3,7 +3,11 @@ import React from 'react';
 function Nav() {
   const toggleNav = () => {
     let nav = document.querySelector('nav');
-    nav.classList.add('nav-background');
+    if (window.scrollY > 100) {
+      nav.classList.add('nav-background');
+    } else {
+      nav.classList.remove('nav-background');
+    }
   };
 
   window.addEventListener('scroll', toggleNav);
@@ -26,7 +30,7 @@ function Nav() {
   };
   return (
     <div id="home">
-      <div className="fixed-nav">
+      <div className="fixed-nav" onScroll={toggleNav}>
         <nav>
           <h1 className="title">coders lounge</h1>
           <h3 className="menu" onClick={toggleMenu}>
