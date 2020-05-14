@@ -122,6 +122,14 @@ a {
   text-align: center;
 }
 
+.results {
+  margin-left: 10px;
+}
+
+.posted-by {
+  color: #f679fa;
+}
+
 #create-post {
   background-color: white;
   color: #4d26aa;

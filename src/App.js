@@ -11,21 +11,36 @@ import LoginMessage from './components/LoginMessage/LoginMessage';
 import Login from './components/Login/Login.js';
 import Footer from './components/Footer/Footer.js';
 
-function App() {
-  return (
-    <div>
-      <Nav />
-      <Header />
-      <About />
-      <PostsMessage />
-      <Posts />
-      <CreateMessage />
-      <CreatePost />
-      <LoginMessage />
-      <Login />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:8082/api/posts')
+      .then((response) => response.json())
+      .then((data) => this.setState({ posts: data }));
+  }
+
+  render() {
+    return (
+      <div>
+        <Nav />
+        <Header />
+        <About />
+        <PostsMessage />
+        <Posts posts={this.state.posts} />
+        <CreateMessage />
+        <CreatePost />
+        <LoginMessage />
+        <Login />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
