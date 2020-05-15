@@ -13,6 +13,7 @@ class Login extends React.Component {
       signInPassword: '',
       signUpUsername: '',
       signUpPassword: '',
+      username: 'anonymous',
     };
 
     this.onTextboxChangeSignInUsername = this.onTextboxChangeSignInUsername.bind(
@@ -124,6 +125,7 @@ class Login extends React.Component {
         console.log('json', json);
         if (json.success) {
           setInStorage('coders-lounge', { token: json.token });
+          this.setState({ username: signInUsername });
           this.setState({
             signInError: json.message,
             isLoading: false,
@@ -150,6 +152,7 @@ class Login extends React.Component {
         .then(() => {
           this.setState({
             token: '',
+            username: 'anonymous',
           });
         });
     }
