@@ -27,11 +27,11 @@ nav {
   justify-content: right;
   background-color: #4d26aa;
   overflow: hidden;
+  position: fixed;
 }
 
 .show {
   transform: translateX(300%);
-  position: fixed;
 }
 
 ul {
@@ -72,13 +72,11 @@ a {
   height: 100vh;
   position: fixed;
   top: 0;
-  z-index: -4;
+  z-index: -1;
   box-shadow: 0 3000px rgba(77, 38, 170, 0.75) inset;
 }
 
-.header-message {
-  color: #f679fa;
-  font-size: 48px;
+.header-stack {
   background: var(--overlay);
   width: 100vw;
   height: 100vh;
@@ -86,6 +84,11 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header-message {
+  color: #f679fa;
+  font-size: 48px;
   margin: 0 auto;
 }
 
@@ -151,6 +154,12 @@ a {
 #login h2 {
   margin-top: 75px;
   margin-left: 10px;
+}
+
+.white-background {
+  background-color: white;
+  padding: 10px;
+  color: #4d26aa;
 }
 
 footer {

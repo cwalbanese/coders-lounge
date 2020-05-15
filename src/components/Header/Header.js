@@ -5,7 +5,9 @@ function Header() {
     <div>
       <div className="header">
         <div className="header-background"></div>
-        <p className="header-message">the chill spot for all coders alike.</p>
+        <div className="header-stack">
+          <p className="header-message">the chill spot for all coders alike.</p>
+        </div>
       </div>
     </div>
   );

@@ -39,8 +39,9 @@ function Nav(props) {
     <div id="home">
       <div className="fixed-nav" onScroll={toggleNav}>
         <nav>
-          <h1 className="title">coders lounge</h1>
-          <h3>welcome "{props.username}"</h3>
+          <a href="#home">
+            <h1 className="title">coders lounge</h1>
+          </a>
           <h3 className="menu" onClick={toggleMenu}>
             &#60;nav&#62;
           </h3>

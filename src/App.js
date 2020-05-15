@@ -16,29 +16,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       posts: [],
-      loggedIn: false,
-      loggedOut: true,
-      username: 'anonymous',
     };
   }
-
-  handleLogin = (evt, data) => {
-    evt.preventDefault();
-    fetch('http://localhost:8082/api/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        localStorage.setItem('token', json.token);
-        this.setState({ loggedIn: true });
-        this.setState({ loggedOut: false });
-        this.setState({ username: json.username });
-      });
-  };
 
   componentDidMount() {
     fetch('http://localhost:8082/api/posts')
@@ -49,15 +28,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav username={this.state.username} />
+        <Nav />
         <Header />
         <About />
         <PostsMessage />
         <Posts posts={this.state.posts} />
+        <LoginMessage />
+        <Login />
         <CreateMessage />
         <CreatePost />
-        <LoginMessage />
-        <Login handleLogin={this.handleLogin} />
         <Footer />
       </div>
     );
