@@ -77,7 +77,6 @@ class App extends React.Component {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log('json', json);
         if (json.success) {
           this.setState({
             signUpError: json.message,
