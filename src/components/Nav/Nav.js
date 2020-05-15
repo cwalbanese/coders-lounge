@@ -57,12 +57,15 @@ function Nav(props) {
           </li>
           <li>
             <a href="#posts">posts</a>
-          </li>
+          </li>{' '}
           <li>
             <a href="#create-post">create</a>
           </li>
           <li>
             <a href="#login">login</a>
+          </li>
+          <li>
+            <a href="#logout">logout</a>
           </li>
         </ul>
       </div>

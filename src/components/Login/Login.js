@@ -52,7 +52,7 @@ class Login extends React.Component {
   render() {
     if (!this.state.token) {
       return (
-        <div className="white-background login">
+        <div id="login" className="white-background login">
           <div>
             {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
             <h2 className="login-title">login</h2>
@@ -101,7 +101,7 @@ class Login extends React.Component {
       );
     }
     return (
-      <div className="white-background loggedin">
+      <div id="logout" className="white-background loggedin">
         <h2 className="login-title">logged in</h2>
         <button className="logout-btn" onClick={this.state.logout}>
           Logout
