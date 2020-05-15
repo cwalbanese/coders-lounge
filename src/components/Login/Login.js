@@ -52,10 +52,10 @@ class Login extends React.Component {
   render() {
     if (!this.state.token) {
       return (
-        <div className="white-background">
+        <div className="white-background login">
           <div>
             {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
-            <h2>login</h2>
+            <h2 className="login-title">login</h2>
             <input
               type="username"
               placeholder="Username"
@@ -70,13 +70,15 @@ class Login extends React.Component {
               onChange={this.state.onTextboxChangeSignInPassword}
             />
             <br />
-            <button onClick={this.state.onSignIn}>Login</button>
+            <button className="login-btn" onClick={this.state.onSignIn}>
+              Login
+            </button>
           </div>
           <br />
           <br />
           <div>
             {this.state.signUpError ? <h2>{this.state.signUpError}</h2> : null}
-            <h2>signup</h2>
+            <h2 className="signup-title">signup</h2>
             <input
               type="username"
               placeholder="Username"
@@ -91,15 +93,19 @@ class Login extends React.Component {
               onChange={this.state.onTextboxChangeSignUpPassword}
             />
             <br />
-            <button onClick={this.state.onSignUp}>Signup</button>
+            <button className="signup-btn" onClick={this.state.onSignUp}>
+              Signup
+            </button>
           </div>
         </div>
       );
     }
     return (
-      <div className="white-background">
-        <h2>logged in</h2>
-        <button onClick={this.state.logout}>Logout</button>
+      <div className="white-background loggedin">
+        <h2 className="login-title">logged in</h2>
+        <button className="logout-btn" onClick={this.state.logout}>
+          Logout
+        </button>
       </div>
     );
   }
