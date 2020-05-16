@@ -17,7 +17,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       posts: [],
-      isLoading: true,
       token: '',
       signUpError: '',
       signInError: '',
@@ -77,9 +76,6 @@ class App extends React.Component {
 
   onSignUp() {
     const { signUpUsername, signUpPassword } = this.state;
-    this.setState({
-      isLoading: true,
-    });
 
     fetch('http://localhost:8082/api/users/signup', {
       method: 'POST',
@@ -96,14 +92,12 @@ class App extends React.Component {
         if (json.success) {
           this.setState({
             signUpError: json.message,
-            isLoading: false,
             signUpUsername: '',
             signUpPassword: '',
           });
         } else {
           this.setState({
             signUpError: json.message,
-            isLoading: false,
           });
         }
       });
@@ -111,9 +105,6 @@ class App extends React.Component {
 
   onSignIn() {
     const { signInUsername, signInPassword } = this.state;
-    this.setState({
-      isLoading: true,
-    });
 
     fetch('http://localhost:8082/api/users/login', {
       method: 'POST',
@@ -132,7 +123,6 @@ class App extends React.Component {
           this.setState({ username: signInUsername });
           this.setState({
             signInError: json.message,
-            isLoading: false,
             signInPassword: '',
             signInUsername: '',
             token: json.token,
@@ -140,7 +130,6 @@ class App extends React.Component {
         } else {
           this.setState({
             signInError: json.message,
-            isLoading: false,
           });
         }
       });
@@ -158,7 +147,6 @@ class App extends React.Component {
           this.setState({
             token: '',
             username: 'anonymous',
-            isLoading: false,
             signUpError: '',
             signInError: '',
           });
