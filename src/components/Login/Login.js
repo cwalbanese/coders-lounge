@@ -42,7 +42,6 @@ class Login extends React.Component {
       return (
         <div id="login" className="white-background login">
           <div>
-            {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
             <h2 className="login-title">login</h2>
             <input
               type="username"
@@ -62,10 +61,11 @@ class Login extends React.Component {
               Login
             </button>
           </div>
-          <br />
-          <br />
-          <div>
+          <div className="error-message">
+            {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
             {this.state.signUpError ? <h2>{this.state.signUpError}</h2> : null}
+          </div>
+          <div>
             <h2 className="signup-title">signup</h2>
             <input
               type="username"

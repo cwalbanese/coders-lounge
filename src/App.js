@@ -159,6 +159,8 @@ class App extends React.Component {
             token: '',
             username: 'anonymous',
             isLoading: false,
+            signUpError: '',
+            signInError: '',
           });
         }
       );
