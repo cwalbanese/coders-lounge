@@ -43,23 +43,30 @@ class Login extends React.Component {
         <div id="login" className="white-background login">
           <div>
             <h2 className="login-title">login</h2>
-            <input
-              type="username"
-              placeholder="username"
-              value={this.state.signInUsername}
-              onChange={this.state.onTextboxChangeSignInUsername}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="password"
-              value={this.state.signInPassword}
-              onChange={this.state.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button className="login-btn" onClick={this.state.onSignIn}>
-              <span>login</span>
-            </button>
+            <form type="submit">
+              {' '}
+              <input
+                type="username"
+                placeholder="username"
+                value={this.state.signInUsername}
+                onChange={this.state.onTextboxChangeSignInUsername}
+              />
+              <br />
+              <input
+                type="password"
+                placeholder="password"
+                value={this.state.signInPassword}
+                onChange={this.state.onTextboxChangeSignInPassword}
+              />
+              <br />
+              <button
+                className="login-btn"
+                onSubmit={this.state.onSignIn}
+                onClick={this.state.onSignIn}
+              >
+                <span>login</span>
+              </button>
+            </form>
           </div>
           <div className="error-message">
             {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
@@ -67,23 +74,29 @@ class Login extends React.Component {
           </div>
           <div id="signup">
             <h2 className="signup-title">signup</h2>
-            <input
-              type="username"
-              placeholder="username"
-              value={this.state.signUpUsername}
-              onChange={this.state.onTextboxChangeSignUpUsername}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="password"
-              value={this.state.signUpPassword}
-              onChange={this.state.onTextboxChangeSignUpPassword}
-            />
-            <br />
-            <button className="signup-btn" onClick={this.state.onSignUp}>
-              <span>signup</span>
-            </button>
+            <form type="submit">
+              <input
+                type="username"
+                placeholder="username"
+                value={this.state.signUpUsername}
+                onChange={this.state.onTextboxChangeSignUpUsername}
+              />
+              <br />
+              <input
+                type="password"
+                placeholder="password"
+                value={this.state.signUpPassword}
+                onChange={this.state.onTextboxChangeSignUpPassword}
+              />
+              <br />
+              <button
+                className="signup-btn"
+                onClick={this.state.onSignUp}
+                onSubmit={this.state.onSignUp}
+              >
+                <span>signup</span>
+              </button>
+            </form>
           </div>
         </div>
       );
@@ -93,7 +106,7 @@ class Login extends React.Component {
         <div>
           <h2 className="login-title">logged in</h2>
           <button className="logout-btn" onClick={this.state.logout}>
-            Logout
+            <span>logout</span>
           </button>
         </div>
       </div>

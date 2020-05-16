@@ -15,6 +15,7 @@ nav {
 .fixed-nav {
   position: fixed;
   top: 0;
+  z-index: 9;
 }
 
 .navbar {
@@ -28,6 +29,7 @@ nav {
   background-color: #4d26aa;
   overflow: hidden;
   position: fixed;
+  z-index: 9;
 }
 
 .show {
@@ -172,7 +174,8 @@ a {
 }
 
 .signup-btn,
-.login-btn {
+.login-btn,
+.logout-btn {
   margin-bottom: 75px;
   display: flex;
   flex-direction: column;
@@ -181,7 +184,8 @@ a {
 }
 
 .signup-btn span,
-.login-btn span {
+.login-btn span,
+.logout-btn span {
   margin-top: 7px;
 }
 
@@ -201,6 +205,8 @@ button {
   font-size: 14px;
   position: relative;
   transition: all 0.5s;
+  z-index: 1;
+  overflow-y: hidden;
 }
 
 button span {

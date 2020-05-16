@@ -13,20 +13,17 @@ import Footer from './components/Footer/Footer.js';
 import { setInStorage, getFromStorage } from './utils/storage.js';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-      token: '',
-      signUpError: '',
-      signInError: '',
-      signInUsername: '',
-      signInPassword: '',
-      signUpUsername: '',
-      signUpPassword: '',
-      username: 'anonymous',
-    };
-  }
+  state = {
+    posts: [],
+    token: '',
+    signUpError: '',
+    signInError: '',
+    signInUsername: '',
+    signInPassword: '',
+    signUpUsername: '',
+    signUpPassword: '',
+    username: 'anonymous',
+  };
 
   verify() {
     const obj = getFromStorage('coders-lounge');
@@ -121,6 +118,7 @@ class App extends React.Component {
         if (json.success) {
           setInStorage('coders-lounge', { token: json.token });
           this.setState({ username: signInUsername });
+
           this.setState({
             signInError: json.message,
             signInPassword: '',
