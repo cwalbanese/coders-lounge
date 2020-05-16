@@ -45,44 +45,44 @@ class Login extends React.Component {
             <h2 className="login-title">login</h2>
             <input
               type="username"
-              placeholder="Username"
+              placeholder="username"
               value={this.state.signInUsername}
               onChange={this.state.onTextboxChangeSignInUsername}
             />
             <br />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="password"
               value={this.state.signInPassword}
               onChange={this.state.onTextboxChangeSignInPassword}
             />
             <br />
             <button className="login-btn" onClick={this.state.onSignIn}>
-              Login
+              <span>login</span>
             </button>
           </div>
           <div className="error-message">
             {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
             {this.state.signUpError ? <h2>{this.state.signUpError}</h2> : null}
           </div>
-          <div>
+          <div id="signup">
             <h2 className="signup-title">signup</h2>
             <input
               type="username"
-              placeholder="Username"
+              placeholder="username"
               value={this.state.signUpUsername}
               onChange={this.state.onTextboxChangeSignUpUsername}
             />
             <br />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="password"
               value={this.state.signUpPassword}
               onChange={this.state.onTextboxChangeSignUpPassword}
             />
             <br />
             <button className="signup-btn" onClick={this.state.onSignUp}>
-              Signup
+              <span>signup</span>
             </button>
           </div>
         </div>

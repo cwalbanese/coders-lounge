@@ -174,6 +174,64 @@ a {
 .signup-btn,
 .login-btn {
   margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-btn span,
+.login-btn span {
+  margin-top: 7px;
+}
+
+input {
+  border: 0;
+  border-bottom: 3px solid #4d26aa;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #f679fa;
+  width: 128px;
+  height: 35px;
+  cursor: pointer;
+  border: 0;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+button span {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  background-color: #4d26aa;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(0.5, 1);
+  transform: scale(0.5, 1);
+}
+button:hover::before {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 .white-background {

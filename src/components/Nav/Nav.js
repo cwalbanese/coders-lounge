@@ -65,6 +65,9 @@ function Nav(props) {
             <a href="#login">login</a>
           </li>
           <li>
+            <a href="#signup">signup</a>
+          </li>
+          <li>
             <a href="#logout">logout</a>
           </li>
         </ul>
