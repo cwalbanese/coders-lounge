@@ -29,10 +29,26 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  verify() {
+    const obj = getFromStorage('coders-lounge');
+    if (obj && obj.token) {
+      const { token } = obj;
+
+      fetch(
+        'http://localhost:8082/api/users/verify?token=' + token
+      ).then((res) => res.json());
+    }
+  }
+
+  fetchPosts() {
     fetch('http://localhost:8082/api/posts')
       .then((response) => response.json())
       .then((data) => this.setState({ posts: data }));
+  }
+
+  componentDidMount() {
+    this.fetchPosts();
+    this.verify();
   }
 
   onTextboxChangeSignInUsername(event) {
@@ -131,18 +147,21 @@ class App extends React.Component {
   }
 
   logout() {
+    this.setState({
+      isLoading: true,
+    });
     const obj = getFromStorage('coders-lounge');
     if (obj && obj.token) {
       const { token } = obj;
-
-      fetch('http://localhost:8082/api/users/logout?token=' + token)
-        .then((res) => res.json())
-        .then(() => {
+      fetch('http://localhost:8082/api/users/logout?token=' + token).then(
+        () => {
           this.setState({
             token: '',
             username: 'anonymous',
+            isLoading: false,
           });
-        });
+        }
+      );
     }
   }
 
