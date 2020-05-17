@@ -5,8 +5,6 @@ import About from './components/About/About.js';
 import Nav from './components/Nav/Nav.js';
 import Posts from './components/Posts/Posts.js';
 import PostsMessage from './components/PostsMessage/PostsMessage.js';
-import CreateMessage from './components/CreateMessage/CreateMessage.js';
-import CreatePost from './components/CreatePost/CreatePost.js';
 import LoginMessage from './components/LoginMessage/LoginMessage';
 import Login from './components/Login/Login.js';
 import Footer from './components/Footer/Footer.js';
@@ -22,7 +20,7 @@ class App extends React.Component {
     signInPassword: '',
     signUpUsername: '',
     signUpPassword: '',
-    username: 'anonymous',
+    username: '',
   };
 
   verify() {
@@ -102,7 +100,6 @@ class App extends React.Component {
 
   onSignIn() {
     const { signInUsername, signInPassword } = this.state;
-
     fetch('http://localhost:8082/api/users/login', {
       method: 'POST',
       headers: {
@@ -116,9 +113,12 @@ class App extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         if (json.success) {
-          setInStorage('coders-lounge', { token: json.token });
+          setInStorage('coders-lounge', {
+            token: json.token,
+            username: signInUsername,
+          });
+          this.forceUpdate();
           this.setState({ username: signInUsername });
-
           this.setState({
             signInError: json.message,
             signInPassword: '',
@@ -177,9 +177,9 @@ class App extends React.Component {
           onSignUp={this.onSignUp}
           onSignIn={this.onSignIn}
           logout={this.logout}
+          username={this.state.username}
         />
-        <CreateMessage />
-        <CreatePost username={this.state.username} />
+
         <Footer />
       </div>
     );

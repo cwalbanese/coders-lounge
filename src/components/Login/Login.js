@@ -1,4 +1,6 @@
 import React from 'react';
+import CreateMessage from '../CreateMessage/CreateMessage.js';
+import CreatePost from '../CreatePost/CreatePost.js';
 
 class Login extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class Login extends React.Component {
       onSignUp: props.onSignUp,
       onSignIn: props.onSignIn,
       logout: props.logout,
+      username: props.username,
     };
     this.state.onTextboxChangeSignInUsername = this.state.onTextboxChangeSignInUsername.bind(
       this
@@ -40,75 +43,88 @@ class Login extends React.Component {
   render() {
     if (!this.state.token) {
       return (
-        <div id="login" className="white-background login">
-          <div>
-            <h2 className="login-title">login</h2>
-            <form type="submit">
-              {' '}
-              <input
-                type="username"
-                placeholder="username"
-                value={this.state.signInUsername}
-                onChange={this.state.onTextboxChangeSignInUsername}
-              />
-              <br />
-              <input
-                type="password"
-                placeholder="password"
-                value={this.state.signInPassword}
-                onChange={this.state.onTextboxChangeSignInPassword}
-              />
-              <br />
-              <button
-                className="login-btn"
-                onSubmit={this.state.onSignIn}
-                onClick={this.state.onSignIn}
-              >
-                <span>login</span>
-              </button>
-            </form>
+        <div>
+          <div id="login" className="white-background login">
+            <div>
+              <h2 className="login-title">login</h2>
+              <form type="submit">
+                {' '}
+                <input
+                  type="username"
+                  placeholder="username"
+                  value={this.state.signInUsername}
+                  onChange={this.state.onTextboxChangeSignInUsername}
+                />
+                <br />
+                <input
+                  type="password"
+                  placeholder="password"
+                  value={this.state.signInPassword}
+                  onChange={this.state.onTextboxChangeSignInPassword}
+                />
+                <br />
+                <button
+                  className="login-btn"
+                  onSubmit={this.state.onSignIn}
+                  onClick={this.state.onSignIn}
+                >
+                  <span>login</span>
+                </button>
+              </form>
+            </div>
+            <div className="error-message">
+              {this.state.signInError ? (
+                <h2>{this.state.signInError}</h2>
+              ) : null}
+              {this.state.signUpError ? (
+                <h2>{this.state.signUpError}</h2>
+              ) : null}
+            </div>
+            <div id="signup">
+              <h2 className="signup-title">signup</h2>
+              <form type="submit">
+                <input
+                  type="username"
+                  placeholder="username"
+                  value={this.state.signUpUsername}
+                  onChange={this.state.onTextboxChangeSignUpUsername}
+                />
+                <br />
+                <input
+                  type="password"
+                  placeholder="password"
+                  value={this.state.signUpPassword}
+                  onChange={this.state.onTextboxChangeSignUpPassword}
+                />
+                <br />
+                <button
+                  className="signup-btn"
+                  onClick={this.state.onSignUp}
+                  onSubmit={this.state.onSignUp}
+                >
+                  <span>signup</span>
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="error-message">
-            {this.state.signInError ? <h2>{this.state.signInError}</h2> : null}
-            {this.state.signUpError ? <h2>{this.state.signUpError}</h2> : null}
-          </div>
-          <div id="signup">
-            <h2 className="signup-title">signup</h2>
-            <form type="submit">
-              <input
-                type="username"
-                placeholder="username"
-                value={this.state.signUpUsername}
-                onChange={this.state.onTextboxChangeSignUpUsername}
-              />
-              <br />
-              <input
-                type="password"
-                placeholder="password"
-                value={this.state.signUpPassword}
-                onChange={this.state.onTextboxChangeSignUpPassword}
-              />
-              <br />
-              <button
-                className="signup-btn"
-                onClick={this.state.onSignUp}
-                onSubmit={this.state.onSignUp}
-              >
-                <span>signup</span>
-              </button>
-            </form>
-          </div>
+          <CreateMessage />
+          <CreatePost username={this.state.username} />
         </div>
       );
     }
     return (
-      <div id="logout" className="white-background loggedin">
-        <div>
-          <h2 className="login-title">logged in</h2>
-          <button className="logout-btn" onClick={this.state.logout}>
-            <span>logout</span>
-          </button>
+      <div>
+        {' '}
+        <div id="logout" className="white-background loggedin">
+          <div>
+            <h2 className="login-title">logged in</h2>
+            <button className="logout-btn" onClick={this.state.logout}>
+              <span>logout</span>
+            </button>
+          </div>
         </div>
+        <CreateMessage />
+        <CreatePost username={this.state.username} />
       </div>
     );
   }
