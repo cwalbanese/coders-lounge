@@ -133,10 +133,7 @@ a {
 
 .results {
   margin-left: 10px;
-}
-
-.posted-by {
-  color: #f679fa;
+  margin-bottom: 15px;
 }
 
 #create-post {
@@ -253,8 +250,15 @@ button:hover::before {
   margin-left: 10px;
 }
 
-.posted-by span {
+.posted-by span,
+.posted-on span {
   color: #4d26aa;
+  margin-left: 10px;
+}
+
+.posted-on,
+.posted-by {
+  color: #f679fa;
 }
 
 .post-input {
