@@ -5,7 +5,7 @@ function Posts(props) {
   return (
     <div id="posts">
       <h2>posts</h2>
-      {posts.map((result) => (
+      {posts.reverse().map((result) => (
         <div key={result._id} className="results">
           <p>{result.post}</p>
           <p className="posted-by">
