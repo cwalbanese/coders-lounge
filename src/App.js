@@ -69,7 +69,8 @@ class App extends React.Component {
     });
   }
 
-  onSignUp() {
+  onSignUp(evt) {
+    evt.preventDefault();
     const { signUpUsername, signUpPassword } = this.state;
 
     fetch('http://localhost:8082/api/users/signup', {
@@ -98,7 +99,8 @@ class App extends React.Component {
       });
   }
 
-  onSignIn() {
+  onSignIn(evt) {
+    evt.preventDefault();
     const { signInUsername, signInPassword } = this.state;
     fetch('http://localhost:8082/api/users/login', {
       method: 'POST',
@@ -153,7 +155,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav logout={this.logout} />
+        <Nav />
         <Header />
         <About />
         <PostsMessage />
