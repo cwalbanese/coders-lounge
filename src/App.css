@@ -175,7 +175,8 @@ a {
 
 .signup-btn,
 .login-btn,
-.logout-btn {
+.logout-btn,
+.post-btn {
   margin-bottom: 75px;
   display: flex;
   flex-direction: column;
@@ -185,7 +186,8 @@ a {
 
 .signup-btn span,
 .login-btn span,
-.logout-btn span {
+.logout-btn span,
+.post-btn span {
   margin-top: 7px;
 }
 
@@ -193,6 +195,7 @@ input {
   border: 0;
   border-bottom: 3px solid #4d26aa;
   margin-bottom: 20px;
+  font-size: 14px;
 }
 
 button {
@@ -244,6 +247,18 @@ button:hover::before {
   background-color: white;
   padding: 10px;
   color: #4d26aa;
+}
+
+.post-form {
+  margin-left: 10px;
+}
+
+.posted-by span {
+  color: #4d26aa;
+}
+
+.post-input {
+  width: 90vw;
 }
 
 footer {

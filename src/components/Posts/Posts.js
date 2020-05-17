@@ -8,7 +8,9 @@ function Posts(props) {
       {posts.map((result) => (
         <div key={result._id} className="results">
           <p>{result.post}</p>
-          <p className="posted-by">Posted By: {result.username}</p>
+          <p className="posted-by">
+            posted by: <span>{result.username}</span>
+          </p>
         </div>
       ))}
     </div>

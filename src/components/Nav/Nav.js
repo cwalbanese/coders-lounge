@@ -68,7 +68,9 @@ function Nav(props) {
             <a href="#signup">signup</a>
           </li>
           <li>
-            <a href="#logout">logout</a>
+            <a href="#logout" onClick={props.logout}>
+              logout
+            </a>
           </li>
         </ul>
       </div>

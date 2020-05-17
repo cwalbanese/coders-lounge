@@ -134,9 +134,6 @@ class App extends React.Component {
   }
 
   logout() {
-    this.setState({
-      isLoading: true,
-    });
     const obj = getFromStorage('coders-lounge');
     if (obj && obj.token) {
       const { token } = obj;
@@ -156,7 +153,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav logout={this.logout} />
         <Header />
         <About />
         <PostsMessage />
@@ -179,7 +176,6 @@ class App extends React.Component {
           logout={this.logout}
           username={this.state.username}
         />
-
         <Footer />
       </div>
     );
