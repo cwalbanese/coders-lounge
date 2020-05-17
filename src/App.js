@@ -23,17 +23,6 @@ class App extends React.Component {
     username: 'anonymous',
   };
 
-  verify() {
-    const obj = getFromStorage('coders-lounge');
-    if (obj && obj.token) {
-      const { token } = obj;
-
-      fetch(
-        'http://localhost:8082/api/users/verify?token=' + token
-      ).then((res) => res.json());
-    }
-  }
-
   fetchPosts() {
     fetch('http://localhost:8082/api/posts')
       .then((response) => response.json())
@@ -42,7 +31,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchPosts();
-    this.verify();
   }
 
   onTextboxChangeSignInUsername(event) {
@@ -146,6 +134,10 @@ class App extends React.Component {
             username: 'anonymous',
             signUpError: '',
             signInError: '',
+          });
+          setInStorage('coders-lounge', {
+            token: '',
+            username: 'anonymous',
           });
         }
       );

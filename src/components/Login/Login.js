@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateMessage from '../CreateMessage/CreateMessage.js';
 import CreatePost from '../CreatePost/CreatePost.js';
+import { getFromStorage } from '../../utils/storage.js';
 
 class Login extends React.Component {
   constructor(props) {
@@ -38,6 +39,17 @@ class Login extends React.Component {
     this.state.onSignUp = this.state.onSignUp.bind(this);
     this.state.onSignIn = this.state.onSignIn.bind(this);
     this.state.logout = this.state.logout.bind(this);
+  }
+
+  componentDidMount() {
+    const obj = getFromStorage('coders-lounge');
+    if (obj && obj.token) {
+      const { token } = obj;
+      this.setState({ token: obj.token, username: obj.username });
+      fetch(
+        'http://localhost:8082/api/users/verify?token=' + token
+      ).then((res) => res.json());
+    }
   }
 
   render() {

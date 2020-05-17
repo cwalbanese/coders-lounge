@@ -25,7 +25,7 @@ class CreatePost extends React.Component {
       },
       mode: 'cors',
       body: JSON.stringify(data),
-    });
+    }).then(() => this.setState({ post: '' }));
   };
 
   render() {
@@ -41,13 +41,15 @@ class CreatePost extends React.Component {
             onChange={this.onTextboxChangePost}
           />
           <br />
-          <button
-            className="post-btn"
-            onClick={this.createPost}
-            onSubmit={this.createPost}
-          >
-            <span>post</span>
-          </button>
+          <a href="/">
+            <button
+              className="post-btn"
+              onClick={this.createPost}
+              onSubmit={this.createPost}
+            >
+              <span>post</span>
+            </button>
+          </a>
         </form>
       </div>
     );
