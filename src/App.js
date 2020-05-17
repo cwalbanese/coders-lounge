@@ -20,7 +20,7 @@ class App extends React.Component {
     signInPassword: '',
     signUpUsername: '',
     signUpPassword: '',
-    username: '',
+    username: 'anonymous',
   };
 
   verify() {
