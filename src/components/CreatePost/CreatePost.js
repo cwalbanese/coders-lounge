@@ -25,7 +25,12 @@ class CreatePost extends React.Component {
       },
       mode: 'cors',
       body: JSON.stringify(data),
-    }).then(() => this.setState({ post: '' }));
+    })
+      .then(() => this.setState({ post: '' }))
+      .then(() => {
+        this.props.fetchPosts();
+        window.location.replace('http://localhost:3000/#posts');
+      });
   };
 
   render() {
