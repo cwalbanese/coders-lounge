@@ -272,9 +272,10 @@ class Posts extends React.Component {
                     type="text"
                     placeholder="comment"
                     name="comment"
-                    onChange={(evt) =>
-                      this.setState({ comment: evt.target.value })
-                    }
+                    onChange={(evt) => {
+                      evt.preventDefault();
+                      this.setState({ comment: evt.target.value });
+                    }}
                   ></input>
                   <br />
                   <button>
