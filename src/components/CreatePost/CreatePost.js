@@ -18,7 +18,7 @@ class CreatePost extends React.Component {
       username: this.props.username,
       post: this.state.post,
     };
-    fetch('http://localhost:8082/api/posts', {
+    fetch('https://coders-lounge-backend.herokuapp.com/api/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,9 @@ class CreatePost extends React.Component {
         this.props.fetchPosts();
       })
       .then(() => {
-        window.location.replace('http://localhost:3000/#posts');
+        window.location.replace(
+          'https://coders-lounge-frontend.herokuapp.com/#posts'
+        );
       });
   };
 

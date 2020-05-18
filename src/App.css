@@ -12,6 +12,11 @@ nav {
   width: 100vw;
 }
 
+.navbar ul li a:hover {
+  color: white;
+  transition: 300ms ease-in-out;
+}
+
 .fixed-nav {
   position: fixed;
   top: 0;

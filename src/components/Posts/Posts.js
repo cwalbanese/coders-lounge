@@ -21,7 +21,7 @@ class Posts extends React.Component {
   }
 
   fetchPosts = () => {
-    fetch('http://localhost:8082/api/posts')
+    fetch('https://coders-lounge-backend.herokuapp.com/api/posts')
       .then((response) => response.json())
       .then((data) => this.setState({ posts: data }));
   };
@@ -58,7 +58,7 @@ class Posts extends React.Component {
     evt.preventDefault();
     const { signUpUsername, signUpPassword } = this.state;
 
-    fetch('http://localhost:8082/api/users/signup', {
+    fetch('https://coders-lounge-backend.herokuapp.com/api/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ class Posts extends React.Component {
   onSignIn(evt) {
     evt.preventDefault();
     const { signInUsername, signInPassword } = this.state;
-    fetch('http://localhost:8082/api/users/login', {
+    fetch('https://coders-lounge-backend.herokuapp.com/api/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -124,20 +124,21 @@ class Posts extends React.Component {
     const obj = getFromStorage('coders-lounge');
     if (obj && obj.token) {
       const { token } = obj;
-      fetch('http://localhost:8082/api/users/logout?token=' + token).then(
-        () => {
-          this.setState({
-            token: '',
-            username: 'anonymous',
-            signUpError: '',
-            signInError: '',
-          });
-          setInStorage('coders-lounge', {
-            token: '',
-            username: 'anonymous',
-          });
-        }
-      );
+      fetch(
+        'https://coders-lounge-backend.herokuapp.com/api/users/logout?token=' +
+          token
+      ).then(() => {
+        this.setState({
+          token: '',
+          username: 'anonymous',
+          signUpError: '',
+          signInError: '',
+        });
+        setInStorage('coders-lounge', {
+          token: '',
+          username: 'anonymous',
+        });
+      });
     }
   }
 
@@ -191,7 +192,7 @@ class Posts extends React.Component {
                       let rate = [result.rating + 1];
 
                       fetch(
-                        'http://localhost:8082/api/posts/update/rating/' +
+                        'https://coders-lounge-backend.herokuapp.com/api/posts/update/rating/' +
                           result._id,
                         {
                           method: 'PUT',
@@ -212,7 +213,7 @@ class Posts extends React.Component {
                       let rate = [result.rating - 1];
 
                       fetch(
-                        'http://localhost:8082/api/posts/update/rating/' +
+                        'https://coders-lounge-backend.herokuapp.com/api/posts/update/rating/' +
                           result._id,
                         {
                           method: 'PUT',
@@ -244,7 +245,8 @@ class Posts extends React.Component {
                     let data = result.comments;
                     data.push(this.state.comment);
                     fetch(
-                      'http://localhost:8082/api/posts/update/' + result._id,
+                      'https://coders-lounge-backend.herokuapp.com/api/posts/update/' +
+                        result._id,
                       {
                         method: 'PUT',
                         headers: {

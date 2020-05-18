@@ -47,7 +47,8 @@ class Login extends React.Component {
       const { token } = obj;
       this.setState({ token: obj.token, username: obj.username });
       fetch(
-        'http://localhost:8082/api/users/verify?token=' + token
+        'https://coders-lounge-backend.herokuapp.com/api/users/verify?token=' +
+          token
       ).then((res) => res.json());
     }
   }
