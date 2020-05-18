@@ -81,7 +81,11 @@ class Posts extends React.Component {
                       mode: 'cors',
                       body: JSON.stringify(data),
                     }
-                  ).then(() => this.fetchPosts());
+                  )
+                    .then(() => this.fetchPosts())
+                    .then(() => {
+                      this.setState({ comment: '' });
+                    });
                 }}
                 type="submit"
               >
@@ -90,6 +94,7 @@ class Posts extends React.Component {
                   type="text"
                   placeholder="comment"
                   name="comment"
+                  value={this.state.comment}
                   onChange={(evt) =>
                     this.setState({ comment: evt.target.value })
                   }
