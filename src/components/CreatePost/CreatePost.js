@@ -5,6 +5,7 @@ class CreatePost extends React.Component {
     super(props);
     this.state = {
       post: '',
+      fetchPosts: props.fetchPosts,
     };
   }
 
@@ -28,7 +29,9 @@ class CreatePost extends React.Component {
     })
       .then(() => this.setState({ post: '' }))
       .then(() => {
-        this.props.fetchPosts();
+        this.state.fetchPosts();
+      })
+      .then(() => {
         window.location.replace('http://localhost:3000/#posts');
       });
   };

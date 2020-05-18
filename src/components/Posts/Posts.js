@@ -56,12 +56,16 @@ class Posts extends React.Component {
                 posted on: <span>{result.time.slice(0, 10)}</span>
               </p>
               <p className="comments-title">comments:</p>
-              <ul className="comments-list">
-                {result.comments.map((comment) => {
-                  let key = this.keyGen();
-                  return <li key={key}>{comment}</li>;
-                })}
-              </ul>
+              <div className="comments-list">
+                {' '}
+                <ul>
+                  {result.comments.map((comment) => {
+                    let key = this.keyGen();
+                    return <li key={key}>&#8226; {comment}</li>;
+                  })}
+                </ul>
+              </div>
+
               <form
                 onSubmit={(event) => {
                   event.preventDefault();
