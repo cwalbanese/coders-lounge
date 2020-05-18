@@ -120,7 +120,10 @@ class Login extends React.Component {
             </div>
           </div>
           <CreateMessage />
-          <CreatePost username={this.state.username} />
+          <CreatePost
+            fetchPosts={this.props.fetchPosts}
+            username={this.state.username}
+          />
         </div>
       );
     }
@@ -137,7 +140,7 @@ class Login extends React.Component {
         </div>
         <CreateMessage />
         <CreatePost
-          fetchPosts={this.state.fetchPosts}
+          fetchPosts={this.props.fetchPosts}
           username={this.state.username}
         />
       </div>

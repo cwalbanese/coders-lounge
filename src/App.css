@@ -129,6 +129,7 @@ a {
   align-items: center;
   font-size: 48px;
   text-align: center;
+  background: transparent;
 }
 
 .results {

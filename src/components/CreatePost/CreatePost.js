@@ -28,10 +28,10 @@ class CreatePost extends React.Component {
     })
       .then(() => this.setState({ post: '' }))
       .then(() => {
-        window.location.replace('http://localhost:3000/#posts');
+        this.props.fetchPosts();
       })
       .then(() => {
-        window.location.reload();
+        window.location.replace('http://localhost:3000/#posts');
       });
   };
 
