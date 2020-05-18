@@ -19,6 +19,28 @@ class Posts extends React.Component {
     this.fetchPosts();
   }
 
+  keyGen = () => {
+    return (
+      this.keyGenHelper() +
+      this.keyGenHelper() +
+      '-' +
+      this.keyGenHelper() +
+      '-' +
+      this.keyGenHelper() +
+      '-' +
+      this.keyGenHelper() +
+      '-' +
+      this.keyGenHelper() +
+      this.keyGenHelper() +
+      this.keyGenHelper()
+    );
+  };
+  keyGenHelper = () => {
+    return Math.floor((1 + Math.random()) * 10000)
+      .toString(16)
+      .substring(1);
+  };
+
   render() {
     return (
       <div id="posts">
@@ -36,7 +58,8 @@ class Posts extends React.Component {
               <p className="comments-title">comments:</p>
               <ul className="comments-list">
                 {result.comments.map((comment) => {
-                  return <li key={Date.now()}>{comment}</li>;
+                  let key = this.keyGen();
+                  return <li key={key}>{comment}</li>;
                 })}
               </ul>
               <form
