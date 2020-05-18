@@ -180,6 +180,19 @@ class Posts extends React.Component {
                   <p className="posted-on">
                     posted on: <span>{result.time.slice(0, 10)}</span>
                   </p>
+                  <p className="rating">
+                    likes: <span>{result.rating}</span>
+                  </p>
+                  <img
+                    className="thumb"
+                    src="/images/thumb.svg"
+                    alt="thumb"
+                  ></img>
+                  <img
+                    className="thumb thumb-down"
+                    src="/images/thumb.svg"
+                    alt="thumb"
+                  ></img>
                 </div>
 
                 <p className="comments-title">comments:</p>

@@ -269,7 +269,8 @@ button:hover::before {
 }
 
 .posted-by span,
-.posted-on span {
+.posted-on span,
+.rating span {
   color: #4d26aa;
   margin-left: 10px;
 }
@@ -289,6 +290,21 @@ button:hover::before {
 
 .post-input {
   width: 90vw;
+}
+
+.thumb {
+  width: 20px;
+}
+
+.thumb-down {
+  margin-left: 10px;
+  transform: rotate(180deg);
+}
+
+.rating {
+  color: #f679fa;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 footer {
@@ -362,6 +378,10 @@ footer p {
   }
 
   .posted-on {
+    margin-left: 0px;
+  }
+
+  .rating {
     margin-left: 0px;
   }
 }
