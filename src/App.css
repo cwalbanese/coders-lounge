@@ -294,6 +294,7 @@ button:hover::before {
 
 .thumb {
   width: 20px;
+  cursor: pointer;
 }
 
 .thumb-down {

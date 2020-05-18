@@ -187,11 +187,43 @@ class Posts extends React.Component {
                     className="thumb"
                     src="/images/thumb.svg"
                     alt="thumb"
+                    onClick={() => {
+                      let rate = [result.rating + 1];
+
+                      fetch(
+                        'http://localhost:8082/api/posts/update/rating/' +
+                          result._id,
+                        {
+                          method: 'PUT',
+                          headers: {
+                            'Content-Type': 'application/json',
+                          },
+                          mode: 'cors',
+                          body: JSON.stringify(rate),
+                        }
+                      ).then(() => this.fetchPosts());
+                    }}
                   ></img>
                   <img
                     className="thumb thumb-down"
                     src="/images/thumb.svg"
                     alt="thumb"
+                    onClick={() => {
+                      let rate = [result.rating - 1];
+
+                      fetch(
+                        'http://localhost:8082/api/posts/update/rating/' +
+                          result._id,
+                        {
+                          method: 'PUT',
+                          headers: {
+                            'Content-Type': 'application/json',
+                          },
+                          mode: 'cors',
+                          body: JSON.stringify(rate),
+                        }
+                      ).then(() => this.fetchPosts());
+                    }}
                   ></img>
                 </div>
 
