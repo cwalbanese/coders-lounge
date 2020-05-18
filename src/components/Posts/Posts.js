@@ -142,6 +142,10 @@ class Posts extends React.Component {
     }
   }
 
+  clearForm = () => {
+    document.querySelector('.comment-form').reset();
+  };
+
   keyGen = () => {
     return (
       this.keyGenHelper() +
@@ -240,6 +244,7 @@ class Posts extends React.Component {
                 </div>
 
                 <form
+                  className="comment-form"
                   onSubmit={(event) => {
                     event.preventDefault();
                     let data = result.comments;
@@ -259,6 +264,7 @@ class Posts extends React.Component {
                       .then(() => this.fetchPosts())
                       .then(() => {
                         this.setState({ comment: '' });
+                        this.clearForm();
                       });
                   }}
                   type="submit"
@@ -268,7 +274,6 @@ class Posts extends React.Component {
                     type="text"
                     placeholder="comment"
                     name="comment"
-                    value={this.state.comment}
                     onChange={(evt) =>
                       this.setState({ comment: evt.target.value })
                     }
