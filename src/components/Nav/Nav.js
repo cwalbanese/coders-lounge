@@ -62,13 +62,13 @@ function Nav(props) {
             <a href="#create-post">create</a>
           </li>
           <li>
-            <a href="#login">login</a>
+            <a href="#log">login</a>
           </li>
           <li>
-            <a href="#signup">signup</a>
+            <a href="#log">signup</a>
           </li>
           <li>
-            <a href="#logout">logout</a>
+            <a href="#log">logout</a>
           </li>
         </ul>
       </div>

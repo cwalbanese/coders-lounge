@@ -56,7 +56,7 @@ class Login extends React.Component {
     if (!this.state.token) {
       return (
         <div>
-          <div id="login" className="white-background login">
+          <div id="log" className="white-background login">
             <div>
               <h2 className="login-title">login</h2>
               <form type="submit">
@@ -92,7 +92,7 @@ class Login extends React.Component {
                 <h2>{this.state.signUpError}</h2>
               ) : null}
             </div>
-            <div id="signup">
+            <div id="log">
               <h2 className="signup-title">signup</h2>
               <form type="submit">
                 <input
@@ -130,7 +130,7 @@ class Login extends React.Component {
     return (
       <div>
         {' '}
-        <div id="logout" className="white-background loggedin">
+        <div id="log" className="white-background loggedin">
           <div>
             <h2 className="login-title">logged in</h2>
             <button className="logout-btn" onClick={this.state.logout}>
