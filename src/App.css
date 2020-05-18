@@ -170,21 +170,29 @@ a {
   margin-top: 75px;
 }
 
-.signup-btn,
-.login-btn,
-.logout-btn,
-.post-btn {
-  margin-bottom: 75px;
+.comments-title {
+  color: #f679fa;
+}
+
+.comment-input {
+  width: 90vw;
+}
+
+button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.signup-btn span,
-.login-btn span,
-.logout-btn span,
-.post-btn span {
+.signup-btn,
+.login-btn,
+.logout-btn,
+.post-btn {
+  margin-bottom: 75px;
+}
+
+button span {
   margin-top: 7px;
 }
 
@@ -268,6 +276,10 @@ button:hover::before {
 footer {
   background-color: #4d26aa;
   color: #f679fa;
+}
+
+.post-item {
+  font-size: 20px;
 }
 
 footer p {
