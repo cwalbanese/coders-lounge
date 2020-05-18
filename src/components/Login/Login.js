@@ -22,7 +22,6 @@ class Login extends React.Component {
       onSignIn: props.onSignIn,
       logout: props.logout,
       username: props.username,
-      fetchPosts: props.fetchPosts,
     };
     this.state.onTextboxChangeSignInUsername = this.state.onTextboxChangeSignInUsername.bind(
       this
@@ -121,10 +120,7 @@ class Login extends React.Component {
             </div>
           </div>
           <CreateMessage />
-          <CreatePost
-            fetchPosts={this.state.fetchPosts}
-            username={this.state.username}
-          />
+          <CreatePost username={this.state.username} />
         </div>
       );
     }

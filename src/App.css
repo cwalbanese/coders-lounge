@@ -134,6 +134,10 @@ a {
 .results {
   margin-left: 10px;
   margin-bottom: 15px;
+  border: 1px dashed #4d26aa;
+  margin-right: 10px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 #create-post {
@@ -180,7 +184,7 @@ a {
 }
 
 .comment-input {
-  width: 90vw;
+  width: 50vw;
 }
 
 button {
@@ -338,5 +342,9 @@ footer p {
 
   .signup-title {
     margin-top: 0px;
+  }
+
+  .comment-input {
+    width: 90vw;
   }
 }

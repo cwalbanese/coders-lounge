@@ -12,7 +12,6 @@ import { setInStorage, getFromStorage } from './utils/storage.js';
 
 class App extends React.Component {
   state = {
-    posts: [],
     token: '',
     signUpError: '',
     signInError: '',
@@ -22,16 +21,6 @@ class App extends React.Component {
     signUpPassword: '',
     username: 'anonymous',
   };
-
-  fetchPosts = () => {
-    fetch('http://localhost:8082/api/posts')
-      .then((response) => response.json())
-      .then((data) => this.setState({ posts: data }));
-  };
-
-  componentDidMount() {
-    this.fetchPosts();
-  }
 
   onTextboxChangeSignInUsername(event) {
     this.setState({
@@ -169,7 +158,6 @@ class App extends React.Component {
           onSignIn={this.onSignIn}
           logout={this.logout}
           username={this.state.username}
-          fetchPosts={this.fetchPosts}
         />
         <Footer />
       </div>
