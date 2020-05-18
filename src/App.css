@@ -135,7 +135,7 @@ a {
 .results {
   margin-left: 10px;
   margin-bottom: 15px;
-  border: 1px dashed #4d26aa;
+  border: 1px solid #4d26aa;
   margin-right: 10px;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -279,6 +279,14 @@ button:hover::before {
   color: #f679fa;
 }
 
+.posted-on {
+  margin-left: 20px;
+}
+
+.posted {
+  display: flex;
+}
+
 .post-input {
   width: 90vw;
 }
@@ -347,5 +355,13 @@ footer p {
 
   .comment-input {
     width: 80vw;
+  }
+
+  .posted {
+    display: block;
+  }
+
+  .posted-on {
+    margin-left: 0px;
   }
 }

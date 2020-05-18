@@ -172,12 +172,16 @@ class Posts extends React.Component {
             return (
               <div key={result._id} className="results">
                 <p className="post-item">"{result.post}"</p>
-                <p className="posted-by">
-                  posted by: <span>{result.username}</span>
-                </p>
-                <p className="posted-on">
-                  posted on: <span>{result.time.slice(0, 10)}</span>
-                </p>
+                <div className="posted">
+                  {' '}
+                  <p className="posted-by">
+                    posted by: <span>{result.username}</span>
+                  </p>
+                  <p className="posted-on">
+                    posted on: <span>{result.time.slice(0, 10)}</span>
+                  </p>
+                </div>
+
                 <p className="comments-title">comments:</p>
                 <div className="comments-list">
                   {' '}
