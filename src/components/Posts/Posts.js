@@ -7,7 +7,7 @@ class Posts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [].reverse(),
+      posts: [],
       comment: '',
       token: '',
       signUpError: '',
@@ -173,7 +173,7 @@ class Posts extends React.Component {
       <div>
         <div id="posts">
           <h2>posts</h2>
-          {this.state.posts.map((result) => {
+          {this.state.posts.reverse().map((result) => {
             return (
               <div key={result._id} className="results">
                 <p className="post-item">"{result.post}"</p>
@@ -244,6 +244,7 @@ class Posts extends React.Component {
                 </div>
 
                 <form
+                  className="comment-form"
                   onSubmit={(event) => {
                     event.preventDefault();
                     let data = result.comments;
