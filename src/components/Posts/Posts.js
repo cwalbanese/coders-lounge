@@ -17,6 +17,7 @@ class Posts extends React.Component {
       signUpUsername: '',
       signUpPassword: '',
       username: 'anonymous',
+      clear: '',
     };
   }
 
@@ -260,10 +261,14 @@ class Posts extends React.Component {
                         body: JSON.stringify(data),
                       }
                     )
-                      .then(() => this.fetchPosts())
                       .then(() => {
                         this.setState({ comment: '' });
-                      });
+                        let forms = document.querySelectorAll('.comment-form');
+                        for (let i = 0; i < forms.length; i++) {
+                          forms[i].reset();
+                        }
+                      })
+                      .then(() => this.fetchPosts());
                   }}
                   type="submit"
                 >
@@ -273,7 +278,6 @@ class Posts extends React.Component {
                     placeholder="comment"
                     name="comment"
                     onChange={(evt) => {
-                      evt.preventDefault();
                       this.setState({ comment: evt.target.value });
                     }}
                   ></input>
