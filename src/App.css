@@ -103,6 +103,8 @@ a {
   background-color: white;
   color: #4d26aa;
   padding-bottom: 75px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #posts h2 {

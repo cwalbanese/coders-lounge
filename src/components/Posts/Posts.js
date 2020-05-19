@@ -172,8 +172,7 @@ class Posts extends React.Component {
     return (
       <div>
         <div id="posts">
-          <h2>posts</h2>
-          {this.state.posts.reverse().map((result) => {
+          {this.state.posts.map((result) => {
             return (
               <div key={result._id} className="results">
                 <p className="post-item">"{result.post}"</p>
@@ -273,7 +272,6 @@ class Posts extends React.Component {
                     type="text"
                     placeholder="comment"
                     name="comment"
-                    value={this.state.comment}
                     onChange={(evt) => {
                       evt.preventDefault();
                       this.setState({ comment: evt.target.value });
@@ -287,6 +285,7 @@ class Posts extends React.Component {
               </div>
             );
           })}
+          <h2>posts</h2>
         </div>
         <div>
           <LoginMessage />
