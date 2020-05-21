@@ -17,7 +17,6 @@ class Posts extends React.Component {
       signUpUsername: '',
       signUpPassword: '',
       username: 'anonymous',
-      clear: '',
     };
   }
 
@@ -142,10 +141,6 @@ class Posts extends React.Component {
       });
     }
   }
-
-  clearForm = () => {
-    this.myFormRef.reset();
-  };
 
   keyGen = () => {
     return (
