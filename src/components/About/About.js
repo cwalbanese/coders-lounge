@@ -7,8 +7,8 @@ function About() {
       <p>
         the coders lounge was created to be a place for software engineers to
         take a break from their busy day. a place to vent and relax. a place to
-        get support from your colleagues. share stories, share a moment. you're
-        in a place where people understand you.
+        get support from your peers. share stories, share a moment. you're in a
+        place where people understand you.
       </p>
     </div>
   );
